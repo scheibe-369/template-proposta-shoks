@@ -515,8 +515,8 @@ export const proposta: PropostaConfig = {
   footer: {
     logoSrc: logo,
     logoAlt: "SHOKS",
-    siteUrl: "https://shoks.com.br",
-    siteLabel: "shoks.com.br",
+    siteUrl: "https://shoks-solutions.com.br",
+    siteLabel: "shoks-solutions.com.br",
     nota: "SHOKS · Inteligência aplicada a operações reais.",
   },
 };
