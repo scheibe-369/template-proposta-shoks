@@ -84,6 +84,12 @@ npm run dev     # abrir e percorrer em 375 / 768 / 1440
 ```
 Rode também `grep -r "\[" src/modules/proposta/data/` — não pode sobrar placeholder (o template em si traz `[CLIENTE]`, `[VALOR]` e `[DDD][NUMERO]` de propósito; numa proposta entregue isso tem que dar zero). E `grep "—" src/modules/proposta/data/proposta.config.tsx` — deve ser zero (proibido travessão).
 
+### 5.1 Gere o PDF de escopo (obrigatório em toda proposta)
+Toda proposta sai com **dois formatos**: o link web e o PDF "Escopo e entregáveis" (A4, fundo claro, texto direto, sem apelo comercial). O PDF lê o bloco `documento` do `proposta.config.tsx` (mesma fonte única) e é renderizado na rota `/documento`.
+1. Preencha `documento` (planos/entregas, fora do escopo, custos de terceiros, o que precisamos do cliente) e `cta.pdfLabel` / `cta.pdfLink` (`/pdfs/<arquivo>.pdf`, igual a `documento.arquivo`).
+2. Rode `npm run pdf`. Usa o Chrome instalado (playwright-core), grava em `public/pdfs/<arquivo>.pdf`.
+3. Abra o PDF e confira paginação (sem bloco cortado) e valores batendo com a seção de preços. **Commite o PDF** junto com o código.
+
 ### 6. Entregue
 Diga ao usuário a URL local (`http://localhost:8080`) e o que mudou. Se ele pedir deploy, veja a seção "Deploy" abaixo.
 

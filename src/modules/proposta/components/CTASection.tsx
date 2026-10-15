@@ -78,6 +78,16 @@ export const CTASection = ({ data }: Props) => {
               <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity" />
             </button>
           </motion.div>
+
+          {data.pdfLink && (
+            <a
+              href={data.pdfLink}
+              download
+              className="mt-6 text-sm text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors"
+            >
+              {data.pdfLabel ?? "Baixar em PDF"}
+            </a>
+          )}
         </div>
       </motion.div>
     </section>

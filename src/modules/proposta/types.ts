@@ -114,6 +114,8 @@ export interface CTAData {
   descricao: string;
   botaoLabel: string;
   botaoLink?: string;
+  pdfLabel?: string;
+  pdfLink?: string;
 }
 
 export interface FooterData {
@@ -122,6 +124,31 @@ export interface FooterData {
   siteUrl: string;
   siteLabel: string;
   nota?: string;
+}
+
+export interface DocumentoGrupo {
+  titulo: string;
+  itens: string[];
+}
+
+export interface DocumentoPlano {
+  nome: string;
+  prazo: string;
+  /** Linha curta sob o nome do plano. */
+  resumo: string;
+  grupos: DocumentoGrupo[];
+}
+
+export interface DocumentoData {
+  eyebrow: string;
+  titulo: string;
+  subtitulo: string;
+  intro: string;
+  planos: DocumentoPlano[];
+  blocos: DocumentoGrupo[];
+  rodape: string;
+  /** Nome do arquivo gerado em public/pdfs (sem extensão), usado pelo script de geração. */
+  arquivo: string;
 }
 
 export interface PropostaConfig {
@@ -135,4 +162,5 @@ export interface PropostaConfig {
   precos: PrecosData;
   cta: CTAData;
   footer?: FooterData;
+  documento?: DocumentoData;
 }

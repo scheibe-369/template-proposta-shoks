@@ -510,6 +510,8 @@ export const proposta: PropostaConfig = {
     botaoLabel: "Falar com um especialista",
     botaoLink:
       "https://wa.me/55[DDD][NUMERO]?text=Ol%C3%A1!%20Quero%20falar%20sobre%20a%20proposta.",
+    pdfLabel: "Baixar o escopo do projeto em PDF",
+    pdfLink: "/pdfs/escopo-[CLIENTE].pdf",
   },
 
   footer: {
@@ -518,5 +520,31 @@ export const proposta: PropostaConfig = {
     siteUrl: "https://shoks-solutions.com.br",
     siteLabel: "shoks-solutions.com.br",
     nota: "SHOKS · Inteligência aplicada a operações reais.",
+  },
+
+  documento: {
+    eyebrow: "ESCOPO E ENTREGÁVEIS",
+    titulo: "[NOME DO PROJETO]",
+    subtitulo: "[CLIENTE] · o que o projeto entrega",
+    intro:
+      "Este documento lista, de forma direta, o que está incluso no projeto. Valores e condições de pagamento estão na proposta: [RESUMO DO INVESTIMENTO E PRAZO].",
+    planos: [
+      {
+        nome: "[NOME DO PLANO OU ENTREGA]",
+        prazo: "Entrega em até [PRAZO]",
+        resumo: "[UMA LINHA SOBRE O QUE ESSE BLOCO ENTREGA]",
+        grupos: [
+          { titulo: "[GRUPO 1]", itens: ["[ITEM]", "[ITEM]", "[ITEM]"] },
+          { titulo: "[GRUPO 2]", itens: ["[ITEM]", "[ITEM]"] },
+        ],
+      },
+    ],
+    blocos: [
+      { titulo: "Fora do escopo", itens: ["[ITEM]"] },
+      { titulo: "Custos de terceiros (por conta do cliente)", itens: ["[ITEM]"] },
+      { titulo: "O que precisamos do [CLIENTE]", itens: ["[ITEM]"] },
+    ],
+    rodape: "Documento preparado pela SHOKS para [CLIENTE] · [DATA]",
+    arquivo: "escopo-[CLIENTE]",
   },
 };
